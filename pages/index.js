@@ -3,8 +3,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import appConfig from '../config.json';
 
-
-
 function Titulo(props) {
   const Tag = props.tag || 'h1';
   return (
@@ -71,7 +69,7 @@ export default function PaginaInicial() {
               onSubmit={function (infosDoEvento) {
                 infosDoEvento.preventDefault();
                 console.log('Alguém submeteu o form');
-                roteamento.push('/chat');
+                roteamento.push(`/chat?username=${username}`);
                 // window.location.href = '/chat';
               }}
               styleSheet={{
